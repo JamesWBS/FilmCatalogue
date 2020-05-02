@@ -4,6 +4,8 @@ import "./navbar.css";
 import Home from "./components/home";
 import Showcase from "./components/showcase";
 import Movie from "./components/movie";
+import Search from "./components/search";
+
 export default () => {
   return (
     <Router>
@@ -20,6 +22,10 @@ export default () => {
             {" "}
             <Link to="/movies">Movies</Link>
           </a>
+          <a href="#">
+            {" "}
+            <Link to="/search">Search</Link>
+          </a>
         </div>
 
         {/* A <Switch> looks through its children <Route>s and
@@ -33,6 +39,9 @@ export default () => {
           </Route>
           <Route path="/movies">
             <Movie></Movie>
+          </Route>
+          <Route path="/search">
+            <Search></Search>
           </Route>
         </Switch>
       </div>
