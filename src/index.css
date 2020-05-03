@@ -15,6 +15,9 @@ code {
 /* entire container, keeps perspective */
 .flip-container {
   perspective: 1000px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
 }
 /* flip the pane when hovered */
 .flip-container:hover .flipper,
@@ -57,4 +60,18 @@ code {
 /* back, initially hidden pane */
 .back {
   transform: rotateY(180deg);
+}
+
+#myDiv {
+  border: 1px hidden black;
+  margin: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+ p {
+  text-align: justify;
 }
