@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Client from "../configuration/contentful";
+import Card from "../components/Card";
 
 export default function Movie() {
   const [data, setData] = useState("");
@@ -12,24 +13,32 @@ export default function Movie() {
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(data);
+  const cardComponent =
+    data &&
+    data.map((element, index) => {
+      return (
+        <Card
+          key={index}
+          imgSrc={element.fields.poster.fields.file.url}
+          title={element.fields.title}
+          releaseDate={element.fields.releaseDate}
+          director={element.fields.director}
+          cast={element.fields.cast}
+          synopsis={element.fields.synopsis}
+        />
+      );
+    });
 
   return (
     <div id="color" class="main">
       {" "}
       <p>Hello this is movie search path</p>
-      <div id="myDiv">
-        {data &&
-          data.map((element, index) => {
-            const {
-              title,
-              releaseDate,
-              director,
-              cast,
-              synopsis,
-            } = element.fields;
+      <div id="myDiv">{cardComponent}</div>
+    </div>
+  );
+}
 
-            return (
+/*
               <div key={index}>
                 <div
                   class="flip-container"
@@ -58,9 +67,4 @@ export default function Movie() {
                   </div>
                 </div>
               </div>
-            );
-          })}
-      </div>
-    </div>
-  );
-}
+              */
