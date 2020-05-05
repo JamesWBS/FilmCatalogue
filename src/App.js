@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./navbar.css";
-import Home from "./components/home";
-import Showcase from "./components/showcase";
-import Movie from "./components/movie";
+import Home from "./views/home";
+import Showcase from "./views/showcase";
+import Movie from "./views/movie";
 import Search from "./components/search";
 
 export default () => {
