@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Client from "../configuration/contentful";
+//import component Card
 import Card from "../components/Card";
 
+//Create default function Movie to export as a component
 export default function Movie() {
+  //Define state variable to use it for data fetching
   const [data, setData] = useState("");
 
+  //useEffect hook ensures the data to be fetched once the page is loaded
   useEffect(() => {
+    //The actual code through which the data is fetched from Contentful API
     Client.getEntries({
       content_type: "film",
     })
@@ -13,10 +18,13 @@ export default function Movie() {
       .catch((err) => console.log(err));
   }, []);
 
+  
   const cardComponent =
+    //The fetched data objects are looped using the "map" method
     data &&
     data.map((element, index) => {
       return (
+        //The Card component structure is used to display the fetched data
         <Card
           key={index}
           imgSrc={element.fields.poster.fields.file.url}
@@ -30,6 +38,7 @@ export default function Movie() {
     });
 
   return (
+    //
     <div id="color" class="main">
       {" "}
       <p>Hello this is movie search path</p>
