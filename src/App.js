@@ -29,7 +29,10 @@ export default () => {
         </div>
 
         {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. Switch and route defines what happens when go on path */}
+            renders the first one that matches the current URL. 
+            
+            872
+            2 Switch and route defines what happens when go on path */}
         <Switch>
           <Route exact path="/">
             <Home></Home>
