@@ -1,3 +1,5 @@
+NOTE VERSION 1 has NETFLIFY; version 2 does not and uses Postgres DB (ElephantSQLDB)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Try it

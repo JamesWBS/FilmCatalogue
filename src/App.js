@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-
+import Search from "./components/Search";
 
 class App extends Component {
     constructor(props) { // this constructor initializes the default state
@@ -30,11 +30,15 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Film Search</h1>
+                    <Search></Search>
                 </header>
                 <p className="App-intro">{this.state.apiResponse}</p>
             </div>
+
+
         );
     }
 }
+
 
 export default App;
