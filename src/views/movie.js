@@ -10,15 +10,15 @@ export default function Movie() {
   const fetchData = function () {
     fetch("http://localhost:8080/movie")
       .then((result) => result.json())
-      .then((finalResult) => setData(finalResult.rows[0]))
+      .then((finalResult) => setData(finalResult.rows))
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
     fetchData();
+    
   }, []);
 
-  console.log(data);
 
   //useEffect hook ensures the data to be fetched once the page is loaded
   /*useEffect(() => {
@@ -35,12 +35,14 @@ export default function Movie() {
     <div id="color" class="main">
       {" "}
       <p>Hello this is movie search path</p>
-      <Card
+    
+      {data ? data.map((data, index) =>  <Card
+        key={index}
         imgSrc={data.urlimage}
         title={data.title}
         releaseDate={data.releasedate}
-        synopsis={data.synopsis}
-      />
+        synopsis={data.synopsis} />)   : null}
+        
     </div>
   );
 }
